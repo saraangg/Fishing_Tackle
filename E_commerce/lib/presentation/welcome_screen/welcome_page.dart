@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/constants/image_constants.dart';
 import 'package:e_commerce/core/utils/dimensions.dart';
 import 'package:e_commerce/presentation/post.dart';
+import 'package:e_commerce/presentation/sign_in_screen/login_page.dart';
 import 'package:e_commerce/routes/App_routes.dart';
 import 'package:e_commerce/widgets/button.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,7 +30,7 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Button(text:Text('LOGIN'), ontap: () {Get.to(PhoneAuthScreen ());},),
+              Button(text:Text('LOGIN'), ontap: () {Get.to(LoginPage ());},),
               SizedBox(height: 20,),
               Button(text:Text('SIGN UP'), ontap: () {Get.toNamed(AppRoutes.Signup);},),
             ],

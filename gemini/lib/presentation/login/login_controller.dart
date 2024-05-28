@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class Log_controller extends GetxController {
+class LoginController extends GetxController {
   final GlobalKey<FormState> keyForm = GlobalKey();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -11,5 +12,17 @@ class Log_controller extends GetxController {
 
   void toggleObscureText() {
     obscureText.value = !obscureText.value;
+  }
+
+  Future<void> login() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      Get.offNamed('/textwithimage');
+    } catch (e) {
+      Get.snackbar('Error', e.toString());
+    }
   }
 }

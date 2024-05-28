@@ -48,7 +48,7 @@ class LoginApi extends GetxController {
           print('Token: $token');
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setString('token', token);
-          Get.offNamed(AppRoutes.HomePage); // Use Get.offNamed to replace current route
+          // Get.offNamed(AppRoutes.HomePage); // Use Get.offNamed to replace current route
           ScaffoldMessenger.of(Get.context!).showSnackBar(
             SnackBar(
               content: Text("Successfully Logged in"),
