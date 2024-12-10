@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
       body: Container(
         width: 500,
         decoration:BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/gif.gif'),fit: BoxFit.cover)
+            image: DecorationImage(image: AssetImage('assets/gif1.gif'),fit: BoxFit.cover)
         ) ,
       ),
     );
